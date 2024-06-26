@@ -187,20 +187,23 @@ main {
   position: relative;
   left: 28%;
   background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-#video-container img {
+/* #video-container img {
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   top: 0;
-}
+} */
 
 #video-container video {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  opacity: 0;
 }
 
 #video-cursor {
@@ -224,10 +227,133 @@ main {
 #page3 {
   min-height: 100vh;
   width: 100%;
-  background-color: rgba(61, 61, 61);
+  /* background-color: rgba(61, 61, 61); */
+  position: relative;
+  padding: 17vh 2vw;
+}
+#page3 h1 {
+  font-size: 8vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  width: 72vw;
+  margin-left: 28%;
   position: relative;
 }
+#page3 .underline{
+    margin-left: 28%;
+}
 
+#page3 h1::before {
+  content: "02";
+  position: absolute;
+  font-size: 2vw;
+  font-family: "silk serif";
+  left: -10%;
+  top: 8%;
+  color: #fff;
+}
+#img-div-container{
+  /* background-color: red; */
+  padding: 3vw;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  
+}
+.image-div{
+  height: 38vw;
+  width: 27vw;
+  position: relative;
+  overflow: hidden;
+  margin: 2vw;
+  flex-shrink: 0;
+  /* background-color: blue; */
+}
+.image-div:nth-child(1){
+  height: 29vw;
+  width: 22vw;
+
+}
+.image-div img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+}
+.page3-circle1{
+  height: 23vw;
+  width: 23vw;
+  margin-top: 23vh;
+  margin-left: 10vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page3-circle1 svg{
+  height: 30%;
+}
+.page3-circle2{
+  height: 23vw;
+  width: 23vw;
+  /* margin-top: 23vh;
+  margin-left: 10vw; */
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 3vw;
+}
+.page3-circle2 svg{
+  height: 30%;
+  rotate: -45deg;
+}
+.circle-in{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.3s;
+  scale: 0;
+  border-radius: 50%;
+}
+.circle-in p{
+  font-size: 0.95vw;
+  font-weight: 500;
+  color: #000;
+  width: 60%;
+  scale: 0;
+  opacity: 0;
+}
+.page3-circle1:hover .circle-in{
+  scale: 1;
+  
+}
+.page3-circle1:hover p{
+  scale: 1;
+  opacity: 1;
+}
+.page3-circle2:hover .circle-in{
+  scale: 1;
+}
+.page3-circle2:hover p{
+  scale: 1;
+  opacity: 1;
+}
 #page4 {
   min-height: 100vh;
   width: 100%;
@@ -247,14 +373,14 @@ main {
   text-transform: uppercase;
   position: relative;
 }
-#page4 #content h1::before{
-    content: "03";
-    position: absolute;
-    font-size: 2vw;
-    font-family: "silk serif";
-    left: -10%;
-    top: 8%;
-    color: #fff;
+#page4 #content h1::before {
+  content: "03";
+  position: absolute;
+  font-size: 2vw;
+  font-family: "silk serif";
+  left: -10%;
+  top: 8%;
+  color: #fff;
 }
 
 #content .underline {
@@ -367,14 +493,14 @@ footer h1 {
   text-transform: uppercase;
   position: relative;
 }
-footer h1::before{
-    content: "04";
-    position: absolute;
-    font-size: 2vw;
-    font-family: "silk serif";
-    left: -10%;
-    top: 8%;
-    color: #fff;
+footer h1::before {
+  content: "04";
+  position: absolute;
+  font-size: 2vw;
+  font-family: "silk serif";
+  left: -10%;
+  top: 8%;
+  color: #fff;
 }
 .underline {
   height: 0.2vw;
@@ -390,19 +516,35 @@ footer h1::before{
   justify-content: space-evenly;
   margin-bottom: 3vw;
 }
-.box{
-    width: 20%;
+.box {
+  width: 20%;
 }
-#footer-div>h6 {
+#footer-div .box>h6{
   font-size: 1vw;
   margin-bottom: 1.5vw;
 }
 #footer-div>h5 {
-    font-size: 1.2w;
-    /* margin: 0.2vh 0; */
-    font-weight: 500;
-  }
-footer>h5{
-    font-size: 1vw;
-    font-weight: 500;
+  font-size: 1.2w;
+  /* margin: 0.2vh 0; */
+  font-weight: 500;
 }
+footer h5 {
+  font-size: 1vw;
+  font-weight: 500;
+}
+._canvas_container{
+  z-index: 9999 !important;
+}
+#flag{
+  height: 25vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50%,-50%);
+  
+}
+#matter3{
+  z-index: 999;
+}
+
